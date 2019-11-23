@@ -1,2 +1,1 @@
-<router-outlet></router-outlet>
-<app-articlelist [articles]="articles$ | async" (handleGetArticles)="handleGetArticles"></app-articlelist>
+<app-articlelist [articles]="articles$ | async" (getArticles)="handleGetArticles($event)"></app-articlelist>

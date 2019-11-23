@@ -1,5 +1,7 @@
 <ul>
-  <li *ngfor let article of articles>
-    <div>{{article.Title}}</div>
+  <li *ngFor="let article of articles">
+    {{article?.title}}
   </li>
 </ul>
+
+

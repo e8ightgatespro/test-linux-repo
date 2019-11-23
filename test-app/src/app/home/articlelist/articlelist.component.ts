@@ -11,7 +11,7 @@ export class ArticlelistComponent implements OnInit {
 
   @Input() articles: Article[];
 
-  @Output() getArticles: EventEmitter<{any}> = new EventEmitter();
+  @Output() getArticles = new EventEmitter();
 
   constructor() { }
 

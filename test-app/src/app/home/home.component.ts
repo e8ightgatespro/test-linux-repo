@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ArticleService } from '../Core/Services/article-service';
 import { Observable } from 'rxjs';
 import { Article } from '../Core';
@@ -11,7 +11,8 @@ import { HomeActions } from './actions';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
 
@@ -23,8 +24,8 @@ export class HomeComponent implements OnInit {
     this.articles$ = this.store$.pipe(select(fromHome.selectArticles));
   }
 
-  hanldleGetArticles() {
-    this.store$.dispatch(HomeActions.getArticles);
+  handleGetArticles() {
+    this.store$.dispatch(HomeActions.getArticles());
   }
 
   // This component will be the home page,
