@@ -1,4 +1,5 @@
 import { Category } from './Category';
+import { SafeUrl } from '@angular/platform-browser';
 
 export class Article {
     Title: string;
@@ -11,6 +12,7 @@ export class Article {
     Content: string;
     Enclosure: string;
     Categories: Category[];
+    SafeThumbnail: SafeUrl;
 }
 
 

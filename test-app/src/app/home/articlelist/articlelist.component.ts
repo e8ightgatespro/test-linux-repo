@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Article } from 'src/app/Core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ArticlelistComponent implements OnInit {
 
   @Output() getArticles = new EventEmitter();
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.handleGetArticles();
@@ -21,6 +22,10 @@ export class ArticlelistComponent implements OnInit {
 
   handleGetArticles() {
     this.getArticles.emit();
+  }
+
+  getSanitizedImage(unsafeUrl: string) {
+    return this.sanitizer.bypassSecurityTrustStyle(`url(` + unsafeUrl + `)`);
   }
 
 }

@@ -1,5 +1,5 @@
 <ul class="article-wrapper">
-  <li *ngFor="let article of articles" class="article">
+  <li *ngFor="let article of articles" class="article" [style.background-image]="getSanitizedImage(article?.thumbnail)">
     {{article?.title}}
   </li>
 </ul>
