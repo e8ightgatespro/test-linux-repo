@@ -6,10 +6,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HomeEffects } from './effects/home.effects';
 import { homeReducers } from './reducers';
+import { ArticlelistComponent } from './articlelist/articlelist.component';
 
 @NgModule({
     declarations: [
-       HomeComponent
+       HomeComponent,
+       ArticlelistComponent
     ],
     imports: [
         HttpClientModule,
