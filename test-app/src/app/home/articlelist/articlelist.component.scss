@@ -1,4 +1,13 @@
-button {
-    height: 20px;
-    width: 50px;
+.article-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    padding: 0px;
+}
+
+.article{
+    display: grid;
+    border: 1px dotted red;
+    width: auto;
+    height: auto;
 }
