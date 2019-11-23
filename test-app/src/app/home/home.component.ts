@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { KotakuService } from '../Core/Services/kotaku.service';
+import { ArticleService } from '../Core/Services/kotaku.service';
 import { map } from 'rxjs/operators';
+import { Article } from '../Core/Models/Article';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,11 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private kotakuService: KotakuService) { }
+  
+
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
-    this.kotakuService.getArticles().pipe(map(response => {
-      console.log(response);
-    }));
     
   }
 

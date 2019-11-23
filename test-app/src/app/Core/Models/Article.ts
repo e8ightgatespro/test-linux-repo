@@ -1,7 +1,16 @@
+import { Category } from './Category';
+
 export class Article {
-    // This will be the Article object
-    // built from the requests to the links
-    // Not sure how these will be built yet
+    Title: string;
+    PubDate: string;
+    Link: string;
+    GUID: string;
+    Author: string;
+    Thumbnail: string;
+    Description: string;
+    Content: string;
+    Enclosure: string;
+    Categories: Category[];
 }
 
 
