@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Article } from 'src/app/Core';
+
 
 @Component({
   selector: 'app-articlelist',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlelistComponent implements OnInit {
 
+  @Input() articles: Article[];
+
+  @Output() getArticles: EventEmitter<{any}> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+    this.handleGetArticles();
+  }
+
+  handleGetArticles() {
+    this.getArticles.emit();
   }
 
 }

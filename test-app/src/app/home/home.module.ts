@@ -7,6 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { HomeEffects } from './effects/home.effects';
 import { homeReducers } from './reducers';
 import { ArticlelistComponent } from './articlelist/articlelist.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { ArticlelistComponent } from './articlelist/articlelist.component';
        ArticlelistComponent
     ],
     imports: [
+        CommonModule,
         HttpClientModule,
         HomeRoutingModule,
         StoreModule.forFeature('home', homeReducers),

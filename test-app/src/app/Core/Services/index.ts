@@ -1,1 +1,1 @@
-export * from './kotaku.service';
+export * from './article-service';
